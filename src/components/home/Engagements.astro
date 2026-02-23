@@ -1,0 +1,68 @@
+---
+const services = [
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/><path d="m15 5 3 3"/></svg>`,
+    title: 'Teknik Blog',
+    description: 'AI ile yazılım geliştirme süreçlerini nasıl dönüştürebilirsiniz? Daha hızlı, daha etkili ve daha stratejik çalışmanın yolları.',
+    detail: 'AI-augmented geliştirme pratikleri, verimlilik stratejileri, prompt engineering ve gerçek dünya deneyimleri.',
+    cta: { label: 'Yazıları Oku', href: '/blog' },
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>`,
+    title: 'Dijital Ürünler',
+    description: 'AI çağında öğrenme rehberleri, verimlilik araç setleri ve pratik kaynaklar. Kendi öğrenme yolculuğunuzu AI ile nasıl tasarlarsınız?',
+    detail: 'AI ile öğrenme stratejileri, kişiselleştirilmiş eğitim planı oluşturma rehberleri ve geçmiş eğitim materyalleri.',
+    cta: { label: 'Kaynaklara Göz At', href: '/egitimler' },
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>`,
+    title: 'Teknik Danışmanlık',
+    description: 'AI-augmented geliştirme stratejisi, mimari review, performans audit ve ekip verimliliği konularında danışmanlık.',
+    detail: 'Ekibinizin AI araçlarını etkili kullanmasından mimari kararlara kadar somut aksiyon planı sunuyorum.',
+    cta: { label: 'İletişime Geç', href: '/contact' },
+  },
+];
+---
+
+<section class="py-16 sm:py-20 border-t border-surface-200 dark:border-surface-700">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-surface-500 dark:text-surface-400 mb-3">
+        Size Nasıl Yardımcı Olabilirim
+      </h2>
+      <p class="text-lg text-surface-600 dark:text-surface-400 max-w-2xl mx-auto">
+        Bilgi ve deneyimimi paylaşma yollarım
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {services.map(svc => (
+        <div class="relative p-6 rounded-2xl bg-white dark:bg-surface-800 border border-surface-200 dark:border-surface-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/5 group flex flex-col">
+          <div class="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform" set:html={svc.icon} />
+          
+          <h3 class="text-lg font-semibold text-surface-900 dark:text-surface-50 mb-2">
+            {svc.title}
+          </h3>
+          
+          <p class="text-sm text-surface-600 dark:text-surface-400 leading-relaxed mb-3">
+            {svc.description}
+          </p>
+
+          <p class="text-xs text-surface-500 dark:text-surface-400 leading-relaxed mb-4">
+            {svc.detail}
+          </p>
+
+          <div class="mt-auto">
+            <a
+              href={svc.cta.href}
+              class="inline-flex items-center gap-1 text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline"
+            >
+              {svc.cta.label}
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

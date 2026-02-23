@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Use class-based dark mode so the toggle controls the theme, not OS preference */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-surface-50: #f8fafc;
+  --color-surface-100: #f1f5f9;
+  --color-surface-200: #e2e8f0;
+  --color-surface-300: #cbd5e1;
+  --color-surface-400: #94a3b8;
+  --color-surface-500: #64748b;
+  --color-surface-600: #475569;
+  --color-surface-700: #334155;
+  --color-surface-800: #1e293b;
+  --color-surface-900: #0f172a;
+  --color-surface-950: #020617;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface-50);
+  color: var(--color-surface-900);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background-color: var(--color-surface-900);
+  color: var(--color-surface-100);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary-500);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-surface-300);
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: var(--color-surface-600);
+}
+
+/* ==========================================
+   Prose / Markdown styling for blog posts
+   ========================================== */
+
+.prose {
+  --tw-prose-body: var(--color-surface-700);
+  --tw-prose-headings: var(--color-surface-900);
+  --tw-prose-links: var(--color-primary-600);
+  --tw-prose-code: var(--color-primary-700);
+  --tw-prose-bold: var(--color-surface-900);
+  --tw-prose-quotes: var(--color-surface-600);
+  --tw-prose-quote-borders: var(--color-primary-400);
+  --tw-prose-counters: var(--color-surface-500);
+  --tw-prose-bullets: var(--color-primary-400);
+  --tw-prose-hr: var(--color-surface-200);
+  --tw-prose-th-borders: var(--color-surface-300);
+  --tw-prose-td-borders: var(--color-surface-200);
+  --tw-prose-captions: var(--color-surface-500);
+  max-width: 72ch;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.dark .prose {
+  --tw-prose-body: var(--color-surface-300);
+  --tw-prose-headings: var(--color-surface-50);
+  --tw-prose-links: var(--color-primary-400);
+  --tw-prose-code: var(--color-primary-300);
+  --tw-prose-bold: var(--color-surface-100);
+  --tw-prose-quotes: var(--color-surface-400);
+  --tw-prose-quote-borders: var(--color-primary-500);
+  --tw-prose-counters: var(--color-surface-400);
+  --tw-prose-bullets: var(--color-primary-400);
+  --tw-prose-hr: var(--color-surface-700);
+  --tw-prose-th-borders: var(--color-surface-600);
+  --tw-prose-td-borders: var(--color-surface-700);
+  --tw-prose-captions: var(--color-surface-400);
+}
+
+/* Headings */
+.prose h2 {
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--color-surface-200);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.dark .prose h2 {
+  border-bottom-color: var(--color-surface-700);
+}
+
+.prose h3 {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.prose h4 {
+  margin-top: 1.5em;
+  font-weight: 600;
+}
+
+/* Links */
+.prose a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary-300);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.2s ease, color 0.2s ease;
+}
+
+.prose a:hover {
+  text-decoration-color: var(--color-primary-600);
+}
+
+.dark .prose a {
+  text-decoration-color: var(--color-primary-700);
+}
+
+.dark .prose a:hover {
+  text-decoration-color: var(--color-primary-400);
+}
+
+/* Code blocks */
+.prose pre {
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-surface-200);
+  padding: 1.25rem 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  overflow-x: auto;
+}
+
+.dark .prose pre {
+  border-color: var(--color-surface-700);
+}
+
+/* Inline code */
+.prose :where(code):not(:where(pre *)) {
+  background-color: var(--color-surface-100);
+  border: 1px solid var(--color-surface-200);
+  border-radius: 0.375rem;
+  padding: 0.15em 0.4em;
+  font-size: 0.85em;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 500;
+}
+
+.dark .prose :where(code):not(:where(pre *)) {
+  background-color: var(--color-surface-800);
+  border-color: var(--color-surface-700);
+}
+
+/* Blockquotes */
+.prose blockquote {
+  border-left-width: 3px;
+  border-left-color: var(--color-primary-400);
+  background-color: var(--color-primary-50);
+  padding: 1rem 1.25rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: normal;
+}
+
+.dark .prose blockquote {
+  border-left-color: var(--color-primary-500);
+  background-color: var(--color-primary-900);
+  background-color: color-mix(in srgb, var(--color-primary-900) 30%, transparent);
+}
+
+.prose blockquote p {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+/* Tables */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.prose thead th {
+  background-color: var(--color-surface-100);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-surface-600);
+}
+
+.dark .prose thead th {
+  background-color: var(--color-surface-800);
+  color: var(--color-surface-400);
+}
+
+.prose tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-surface-200);
+}
+
+.dark .prose tbody td {
+  border-bottom-color: var(--color-surface-700);
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tbody tr:hover {
+  background-color: var(--color-surface-50);
+}
+
+.dark .prose tbody tr:hover {
+  background-color: var(--color-surface-800);
+}
+
+/* Lists */
+.prose ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prose ul > li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.prose ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.25em;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-primary-400);
+}
+
+.prose ol {
+  padding-left: 1.5em;
+}
+
+.prose ol > li::marker {
+  color: var(--color-primary-500);
+  font-weight: 600;
+}
+
+.prose li {
+  margin-top: 0.375em;
+  margin-bottom: 0.375em;
+}
+
+/* Nested lists */
+.prose ul ul,
+.prose ol ul {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+}
+
+/* Horizontal rules */
+.prose hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-surface-300), transparent);
+  margin: 3rem 0;
+}
+
+.dark .prose hr {
+  background: linear-gradient(to right, transparent, var(--color-surface-600), transparent);
+}
+
+/* Strong / Bold */
+.prose strong {
+  font-weight: 700;
+  color: var(--tw-prose-bold);
+}
+
+/* Images */
+.prose img {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Paragraphs — comfortable spacing */
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* First paragraph after heading — tighter */
+.prose h2 + p,
+.prose h3 + p,
+.prose h4 + p {
+  margin-top: 0.5em;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary-500), #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -1,0 +1,33 @@
+---
+const stats = [
+  { value: '9+', label: 'Yıl Deneyim', detail: 'Frontend & Full-Stack' },
+  { value: '5', label: 'Şirket', detail: 'Startup, kurumsal, enterprise' },
+  { value: '8', label: 'Major Migration', detail: 'Angular sürüm yükseltme' },
+  { value: '30+', label: 'Uçtan Uca Özellik', detail: 'Tasarım → production' },
+  { value: '3.5+', label: 'Yıl Enterprise Ürün', detail: 'Güvenli iletişim platformu' },
+  { value: '1', label: 'Kurulan Startup', detail: 'Co-founder olarak sıfırdan' },
+];
+---
+
+<section class="py-16 sm:py-20 border-t border-surface-200 dark:border-surface-700">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <h2 class="text-sm font-semibold uppercase tracking-wider text-surface-500 dark:text-surface-400 mb-10 text-center">
+      Rakamlarla
+    </h2>
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+      {stats.map(stat => (
+        <div class="text-center p-4 rounded-xl bg-white dark:bg-surface-800/50 border border-surface-200 dark:border-surface-700/50 group hover:border-primary-300 dark:hover:border-primary-600 transition-all">
+          <div class="text-3xl sm:text-4xl font-bold text-surface-900 dark:text-surface-50 mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+            {stat.value}
+          </div>
+          <div class="text-sm font-medium text-surface-700 dark:text-surface-300 mb-1">
+            {stat.label}
+          </div>
+          <div class="text-xs text-surface-500 dark:text-surface-400">
+            {stat.detail}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

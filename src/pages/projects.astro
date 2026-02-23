@@ -1,0 +1,218 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+// Case studies derived from real engineering contributions
+const caseStudies = [
+  {
+    title: 'RealTyme Desktop — Güvenli İletişim Platformu',
+    period: '2022 – Halen',
+    role: 'Senior Software Engineer',
+    context: 'Uçtan uca şifreli, güvenlik odaklı bir iletişim platformunun Electron + Angular masaüstü uygulaması.',
+    techs: ['Angular', 'Electron', 'TypeScript', 'RxJS', 'PouchDB', 'WebRTC', 'gRPC', 'NgXS'],
+    impact: [
+      { metric: '3.5+', label: 'Yıl aktif geliştirme' },
+      { metric: '8', label: 'Major Angular migration' },
+      { metric: '30+', label: 'Uçtan uca teslim edilen özellik' },
+    ],
+    challenges: [
+      {
+        problem: 'Büyük Ölçekli Component Refactoring',
+        solution: 'Monolitik yapıdaki ana modülleri küçük, bağımsız alt bileşenlere ayrıştırdım. Observable-based template yaklaşımına geçiş yaparak reaktif ve öngörülebilir bir veri akışı sağladım.',
+        result: 'Sürdürülebilir, test edilebilir ve genişletilebilir bir mimari elde edildi.',
+      },
+      {
+        problem: 'Multi-Major Angular Migration',
+        solution: '8 major Angular sürümünü sistematik olarak yükselttim. Material Legacy → MDC geçişi, state management upgrade, 100+ bağımlılık güncelleme ve her adımda build stabilitesi sağladım.',
+        result: 'Proje modern Angular ekosistemine taşındı, güvenlik yamaları ve yeni framework özellikleri kullanılabilir hale geldi.',
+      },
+      {
+        problem: 'İçerik Akışı Modülü — Sıfırdan İnşa',
+        solution: 'Veri modeli tasarımı, çoklu içerik tipi desteği, virtual scroll, RTL desteği, taslak yönetimi ve bildirim entegrasyonu dahil tam modülü uçtan uca geliştirdim.',
+        result: 'Offline dayanıklı ve ölçeklenebilir bir içerik akışı sistemi bağımsız olarak teslim edildi.',
+      },
+      {
+        problem: 'OpenID Connect / SSO Entegrasyonu',
+        solution: 'OpenID standardını araştırarak tam authentication akışını tasarladım: kullanıcı kayıt süreci, cihaz yönetimi, sertifika yenileme ve hata senaryoları.',
+        result: 'Kurumsal müşteriler için SSO desteği production\'a alındı.',
+      },
+      {
+        problem: 'Performans Optimizasyonu ve Memory Leak Analizi',
+        solution: 'RxJS subscription, Blob URL ve render kaynaklı memory leak\'leri Chrome DevTools ile tespit ettim. Virtual scroll, zone optimizasyonu ve veri yapısı iyileştirmeleri uyguladım.',
+        result: 'Büyük veri setlerinde donma sorunları çözüldü, bellek kullanımı stabilize edildi.',
+      },
+      {
+        problem: 'Kullanıcı Etkileşim Modülü — Sıfırdan Tasarım',
+        solution: 'Veri modeli, servis katmanı ve UI bileşenini sıfırdan tasarlayıp geliştirdim. Asenkron veri yüklemesi sırasında scroll pozisyonunu koruyan özel utility yazdım.',
+        result: 'Real-time güncellemeler, bildirimler ve RTL desteği içeren tam özellikli bir etkileşim modülü.',
+      },
+    ],
+    otherFeatures: [
+      'Anket ve oylama sistemi',
+      'İçerik düzenleme ve real-time senkronizasyon',
+      'Güvenlik odaklı medya paylaşım mekanizması',
+      'Cihazlar arası güvenli veri aktarım altyapısı',
+      'Hesap kurtarma akışı (çoklu senaryo)',
+      'Liste yönetimi (sabitleme, arşivleme, filtreleme)',
+      'Kullanıcı şablonları (CRUD + cihazlar arası senkronizasyon)',
+      'Cross-platform adaptasyon (web + desktop)',
+    ],
+  },
+  {
+    title: 'ADYOUNEED — AI Reklam Platformu',
+    period: '2019 – 2021',
+    role: 'Co-founder & Senior Lead Software Engineer',
+    context: 'Facebook, Google ve LinkedIn reklam API\'lerini tek panelden yönetmeyi sağlayan AI destekli bir SaaS platformu.',
+    techs: ['Angular', 'Node.js', 'MongoDB', 'Redis', 'Socket.io', 'AWS', 'Docker', 'Jenkins'],
+    impact: [
+      { metric: '0→1', label: 'Fikir aşamasından ürüne' },
+      { metric: '3', label: 'Reklam platformu entegrasyonu (FB, Google, LinkedIn)' },
+      { metric: '2+', label: 'Yıl boyunca teknik liderlik' },
+    ],
+    challenges: [
+      {
+        problem: 'Sıfırdan Ürün İnşası',
+        solution: 'Teknik kurucu olarak çekirdek geliştirme ekibini kurdum. Frontend (Angular), backend (Node.js/Express), veritabanı (MongoDB), cache (Redis), real-time (Socket.io) ve deployment (AWS/Docker/Jenkins) katmanlarını tasarladım.',
+        result: 'Tam çalışan bir SaaS ürünü pazara sunuldu.',
+      },
+      {
+        problem: 'Üçlü Reklam API Entegrasyonu',
+        solution: 'Facebook, Google ve LinkedIn Ads API\'lerini tek bir arayüzde birleştirdim. Stripe ve Chargebee ödeme gateway\'lerini entegre ettim.',
+        result: 'Kullanıcılar tek panelden tüm reklam platformlarını yönetebilir hale geldi.',
+      },
+    ],
+    otherFeatures: [],
+  },
+  {
+    title: 'Getir — Franchise Paneli',
+    period: '2021 – 2022',
+    role: 'Senior Frontend Developer',
+    context: 'Getir\'in franchise mağazalarını yöneten dahili panel uygulaması.',
+    techs: ['React', 'Redux', 'Redux Saga', 'TypeScript'],
+    impact: [
+      { metric: '10', label: 'Ay boyunca aktif geliştirme' },
+    ],
+    challenges: [
+      {
+        problem: 'Ekip Geliştirme ve Mentorluk',
+        solution: 'Mid/junior geliştiricilere pair programming ve code review ile mentorluk yaptım. Teknik mülakatlar gerçekleştirdim.',
+        result: 'Ekip teknik kapasitesi ve kod kalitesi yükseldi.',
+      },
+    ],
+    otherFeatures: [],
+  },
+];
+---
+
+<PageLayout
+  title="Projeler & Vaka Çalışmaları"
+  description="Umut Çakır'ın çalıştığı projeler — güvenli iletişim, reklam platformu ve daha fazlası. Gerçek sorunlar, gerçek çözümler."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+    <h1 class="text-3xl sm:text-4xl font-bold text-surface-900 dark:text-surface-50 mb-4">
+      Projeler & Vaka Çalışmaları
+    </h1>
+    <p class="text-lg text-surface-600 dark:text-surface-400 mb-12">
+      Gerçek sorunlar, gerçek çözümler. Her proje somut mühendislik kararları ve kanıtlanmış sonuçlar içerir.
+    </p>
+
+    <div class="space-y-12">
+      {caseStudies.map((project, pi) => (
+        <article class="rounded-2xl border border-surface-200 dark:border-surface-700 bg-white dark:bg-surface-800 overflow-hidden">
+          <!-- Header -->
+          <div class="p-6 sm:p-8 border-b border-surface-100 dark:border-surface-700/50">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+              <h2 class="text-xl sm:text-2xl font-bold text-surface-900 dark:text-surface-50">
+                {project.title}
+              </h2>
+              <span class="text-xs font-medium text-primary-600 dark:text-primary-400 uppercase tracking-wide whitespace-nowrap">
+                {project.period}
+              </span>
+            </div>
+            <p class="text-sm font-medium text-surface-500 dark:text-surface-400 mb-3">{project.role}</p>
+            <p class="text-sm text-surface-600 dark:text-surface-400 leading-relaxed mb-4">
+              {project.context}
+            </p>
+            
+            <!-- Tech stack -->
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {project.techs.map(tech => (
+                <span class="px-2.5 py-1 text-xs font-medium rounded-full bg-surface-100 dark:bg-surface-700 text-surface-600 dark:text-surface-300">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <!-- Impact metrics -->
+            {project.impact.length > 0 && (
+              <div class="flex flex-wrap gap-4 mt-4">
+                {project.impact.map(item => (
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg font-bold text-primary-600 dark:text-primary-400">{item.metric}</span>
+                    <span class="text-xs text-surface-500 dark:text-surface-400">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <!-- Challenges / Case Studies -->
+          <div class="p-6 sm:p-8">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-surface-500 dark:text-surface-400 mb-6">
+              Çözülen Mühendislik Zorlukları
+            </h3>
+            <div class="space-y-6">
+              {project.challenges.map((c, i) => (
+                <div class="relative pl-6 border-l-2 border-primary-200 dark:border-primary-800">
+                  <div class="mb-2">
+                    <h4 class="text-base font-semibold text-surface-900 dark:text-surface-50">{c.problem}</h4>
+                  </div>
+                  <div class="space-y-2 text-sm">
+                    <div>
+                      <span class="font-medium text-surface-700 dark:text-surface-300">Çözüm: </span>
+                      <span class="text-surface-600 dark:text-surface-400">{c.solution}</span>
+                    </div>
+                    <div>
+                      <span class="font-medium text-primary-600 dark:text-primary-400">Sonuç: </span>
+                      <span class="text-surface-600 dark:text-surface-400">{c.result}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Other features delivered */}
+            {project.otherFeatures.length > 0 && (
+              <div class="mt-8">
+                <h3 class="text-sm font-semibold uppercase tracking-wider text-surface-500 dark:text-surface-400 mb-4">
+                  Teslim Edilen Diğer Özellikler
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {project.otherFeatures.map(f => (
+                    <div class="flex items-start gap-2 text-sm text-surface-600 dark:text-surface-400">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-1 text-primary-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                      {f}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <p class="text-surface-600 dark:text-surface-400 mb-4">
+        Bu konularda teknik danışmanlık veya detaylı içerik mi arıyorsunuz?
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-medium transition-colors shadow-lg shadow-primary-600/20"
+      >
+        İletişime Geçin
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</PageLayout>

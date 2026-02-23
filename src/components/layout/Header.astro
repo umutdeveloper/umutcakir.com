@@ -1,0 +1,86 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { NAV_LINKS } from '../../utils/constants';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-surface-200/80 dark:border-surface-700/80 bg-surface-50/80 dark:bg-surface-900/80 backdrop-blur-lg">
+  <nav class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="text-lg font-bold text-surface-900 dark:text-surface-50 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+      UC<span class="text-primary-500">.</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-1">
+      {NAV_LINKS.map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            'px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+            currentPath.startsWith(link.href)
+              ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+              : 'text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-800',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="ml-2 pl-2 border-l border-surface-200 dark:border-surface-700">
+        <ThemeToggle />
+      </div>
+    </div>
+
+    <!-- Mobile menu button + theme toggle -->
+    <div class="flex items-center gap-2 md:hidden">
+      <ThemeToggle />
+      <button
+        id="mobile-menu-btn"
+        class="p-2 rounded-lg text-surface-600 dark:text-surface-400 hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors"
+        aria-label="Menüyü aç"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon">
+          <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="close-icon" class="hidden">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-surface-200 dark:border-surface-700 bg-surface-50/95 dark:bg-surface-900/95 backdrop-blur-lg">
+    <div class="px-4 py-3 space-y-1">
+      {NAV_LINKS.map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            'block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
+            currentPath.startsWith(link.href)
+              ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+              : 'text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-800',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+    btn.setAttribute('aria-label', isOpen ? 'Menüyü aç' : 'Menüyü kapat');
+  });
+</script>
