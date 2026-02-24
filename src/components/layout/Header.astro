@@ -5,11 +5,14 @@ import { NAV_LINKS } from '../../utils/constants';
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-surface-200/80 dark:border-surface-700/80 bg-surface-50/80 dark:bg-surface-900/80 backdrop-blur-lg">
+<header class="sticky top-0 z-50 w-full border-b border-surface-200 dark:border-[rgba(255,255,255,0.06)] bg-surface-50/80 dark:bg-surface-900/80 backdrop-blur-lg">
   <nav class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
     <!-- Logo -->
-    <a href="/" class="text-lg font-bold text-surface-900 dark:text-surface-50 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-      UC<span class="text-primary-500">.</span>
+    <a
+      href="/"
+      class="logo-link text-xl font-display font-bold text-surface-900 dark:text-surface-50 transition-all duration-300"
+    >
+      UC<span class="text-accent-500">.</span>
     </a>
 
     <!-- Desktop nav -->
@@ -18,16 +21,16 @@ const currentPath = Astro.url.pathname;
         <a
           href={link.href}
           class:list={[
-            'px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+            'nav-link relative px-3 py-2 text-sm font-medium transition-colors duration-200',
             currentPath.startsWith(link.href)
-              ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
-              : 'text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-800',
+              ? 'nav-link--active text-accent-500 dark:text-accent-400'
+              : 'text-surface-500 dark:text-surface-400 hover:text-surface-900 dark:hover:text-surface-100',
           ]}
         >
           {link.label}
         </a>
       ))}
-      <div class="ml-2 pl-2 border-l border-surface-200 dark:border-surface-700">
+      <div class="ml-3 pl-3 border-l border-surface-200 dark:border-[rgba(255,255,255,0.06)]">
         <ThemeToggle />
       </div>
     </div>
@@ -37,7 +40,7 @@ const currentPath = Astro.url.pathname;
       <ThemeToggle />
       <button
         id="mobile-menu-btn"
-        class="p-2 rounded-lg text-surface-600 dark:text-surface-400 hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors"
+        class="p-2 rounded-lg text-surface-500 dark:text-surface-400 hover:text-accent-500 dark:hover:text-accent-400 hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors"
         aria-label="Menüyü aç"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="menu-icon">
@@ -51,15 +54,15 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-surface-200 dark:border-surface-700 bg-surface-50/95 dark:bg-surface-900/95 backdrop-blur-lg">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-surface-200 dark:border-[rgba(255,255,255,0.06)] bg-surface-50/95 dark:bg-surface-900/95 backdrop-blur-lg">
     <div class="px-4 py-3 space-y-1">
       {NAV_LINKS.map(link => (
         <a
           href={link.href}
           class:list={[
-            'block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
+            'block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200',
             currentPath.startsWith(link.href)
-              ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+              ? 'text-accent-500 dark:text-accent-400 bg-accent-500/10 dark:bg-accent-400/10'
               : 'text-surface-600 dark:text-surface-400 hover:text-surface-900 dark:hover:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-800',
           ]}
         >
@@ -70,17 +73,49 @@ const currentPath = Astro.url.pathname;
   </div>
 </header>
 
-<script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
+<style>
+  /* Logo hover glow */
+  .logo-link:hover {
+    filter: drop-shadow(0 0 8px rgba(232, 168, 73, 0.5));
+  }
 
-  btn?.addEventListener('click', () => {
-    const isOpen = !menu?.classList.contains('hidden');
-    menu?.classList.toggle('hidden');
-    menuIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
-    btn.setAttribute('aria-label', isOpen ? 'Menüyü aç' : 'Menüyü kapat');
+  /* Sliding underline for nav links */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent-500);
+    transition: width 0.25s ease, left 0.25s ease;
+    border-radius: 1px;
+  }
+
+  :global(.dark) .nav-link::after {
+    background: var(--color-accent-400);
+  }
+
+  .nav-link:hover::after,
+  .nav-link--active::after {
+    width: 60%;
+    left: 20%;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    btn?.addEventListener('click', () => {
+      const isOpen = !menu?.classList.contains('hidden');
+      menu?.classList.toggle('hidden');
+      menuIcon?.classList.toggle('hidden');
+      closeIcon?.classList.toggle('hidden');
+      btn.setAttribute('aria-label', isOpen ? 'Menüyü aç' : 'Menüyü kapat');
+    });
   });
 </script>

@@ -1,126 +1,58 @@
 ---
 const useCases = [
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>`,
     title: 'Kompleks Özellik Geliştirme',
-    subtitle: 'AI destekli, uçtan uca teslimat',
-    description: 'DB şeması, state management, UI, offline dayanıklılık ve backend entegrasyonunu kapsayan karmaşık özellikleri AI araçlarıyla hızlandırarak bağımsız olarak teslim ediyorum.',
-    evidence: [
-      'Mesajlaşma, feed, anket, reaction gibi tam modülleri sıfırdan tasarlayıp geliştirdim',
-      '0→1 SaaS ürünü: frontend, backend, ödeme, reklam API entegrasyonu — tam yığın',
-      'AI pair programming ile karmaşık özelliklerde geliştirme hızını katladım',
-    ],
-    tags: ['Full-Stack Feature', 'AI Pair Programming', '0→1 Product'],
+    subtitle: 'DB → State → UI → Deploy, bağımsız teslimat',
+    description: 'Mesajlaşma, feed, anket gibi karmaşık modülleri uçtan uca tasarlayıp teslim ediyorum. 0→1 SaaS ürünü kurdum.',
+    tags: ['Full-Stack', 'AI Pair Programming', '0→1 Product'],
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg>`,
     title: 'Migration & Modernizasyon',
-    subtitle: 'AI ile sistematik yenileme',
-    description: 'Büyük framework migration\'ları ve mimari yeniden yapılandırma işlerini AI destekli analiz ve refactoring ile sistematik olarak yönetiyorum.',
-    evidence: [
-      'Angular.js → Angular migration ve performans iyileştirmeleri yaptım',
-      '8 major Angular sürüm yükseltmesini production\'da sorunsuz tamamladım',
-      'AI ile impact analizi, dependency audit ve otomatik refactoring stratejileri uyguluyorum',
-    ],
+    subtitle: '8 major Angular upgrade, sıfır downtime',
+    description: 'Angular.js → Angular ve 8 major versiyon yükseltmesini production\'da sorunsuz tamamladım. AI ile impact analizi ve otomatik refactoring.',
     tags: ['Framework Migration', 'AI + Refactoring', 'Technical Debt'],
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
     title: 'Performans & Stabilite',
-    subtitle: 'AI ile diagnostik, hızlı çözüm',
-    description: 'Memory leak tespiti, render optimizasyonu ve race condition çözümlerinde AI destekli diagnostik ile ürünü hızlı ve stabil tutuyorum.',
-    evidence: [
-      'RxJS, Blob URL ve PDF kaynaklı memory leak\'leri tespit edip düzelttim',
-      'Low-code UI aracının performansını optimize ettim',
-      'AI ile hızlı root cause analizi, heap snapshot yorumlama ve test senaryoları üretiyorum',
-    ],
-    tags: ['Memory Leaks', 'AI Diagnostics', 'Rendering'],
+    subtitle: 'Memory leak hunter, render optimizer',
+    description: 'RxJS, Blob URL, PDF kaynaklı memory leak\'leri tespit edip düzelttim. AI ile hızlı root cause analizi ve heap snapshot yorumlama.',
+    tags: ['Memory Leaks', 'AI Diagnostics', 'Optimization'],
   },
   {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
-    title: 'Güvenlik & Authentication',
-    subtitle: 'Güvenlik, sonradan eklenen özellik değil',
-    description: 'OpenID Connect, HMAC doğrulama ve E2E encryption gibi güvenlik katmanlarını AI ile hızlandırılmış araştırma ve implementasyon süreciyle tasarlıyorum.',
-    evidence: [
-      'OpenID Connect entegrasyonunu araştırma aşamasından production\'a taşıdım',
-      'Stripe/Chargebee ödeme güvenliği ve sosyal login entegrasyonları yaptım',
-      'AI ile güvenlik standartları araştırma, edge case analizi ve test kapsamını genişletiyorum',
-    ],
-    tags: ['OpenID', 'E2E Encryption', 'AI + Security Research'],
-  },
-  {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>`,
-    title: 'UI Mühendisliği & Design System',
-    subtitle: 'Figma\'dan pixel-perfect koda',
-    description: 'Tasarım dosyalarını birebir uyguluyor, RTL desteği, i18n, theming ve responsive layout konularında uçtan uca çözüm üretiyorum.',
-    evidence: [
-      'Bir e-ticaret sitesinin tüm UI\'ını Angular Universal ile geliştirdim',
-      'Arapça, İbranice dahil tam RTL layout ve white-label theming uyguladım',
-      'Low-code UI tool için custom vanilla JS ve Angular bileşenleri geliştirdim',
-    ],
-    tags: ['Figma \u2192 Code', 'RTL', 'Angular Universal', 'Theming'],
-  },
-  {
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>`,
-    title: 'Cross-Platform Uygulama',
-    subtitle: 'Masaüstü + Web, tek kod tabanı',
-    description: 'Electron ile masaüstü, Angular ile web — aynı kod tabanından farklı platformlara güvenli uygulama çıkarıyorum.',
-    evidence: [
-      'Electron + Angular masaüstü uygulamasını 3.5+ yıldır geliştiriyorum',
-      'AWS EC2, Docker ve Jenkins ile full CI/CD pipeline tasarladım',
-      'Web platformuna adaptasyon: OPFS, clipboard API ve browser kısıtlamaları deneyimim var',
-    ],
-    tags: ['Electron', 'AWS/Docker', 'Multi-Platform'],
+    title: 'Cross-Platform',
+    subtitle: 'Electron + Angular, tek codebase',
+    description: 'Masaüstü + web uygulamasını 3.5+ yıldır aynı kod tabanından geliştiriyorum. OPFS, clipboard API, browser kısıtlamaları deneyimi.',
+    tags: ['Electron', 'Multi-Platform', 'Desktop App'],
   },
 ];
 ---
 
-<section class="py-16 sm:py-20 bg-surface-100/50 dark:bg-surface-800/30 border-t border-surface-200 dark:border-surface-700">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-surface-500 dark:text-surface-400 mb-3">
-        Nerede Fark Yaratıyorum
+<section class="py-20 sm:py-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <!-- Section header -->
+    <div class="mb-12 reveal">
+      <span class="section-label">Fark Yarattığım Alanlar</span>
+      <h2 class="section-title text-3xl sm:text-4xl mt-3">
+        Kanıtlanmış çözümler<span class="text-accent-400">.</span>
       </h2>
-      <p class="text-lg text-surface-600 dark:text-surface-400 max-w-2xl mx-auto">
-        Farklı sektör ve ölçeklerdeki projelerden kanıtlanmış, AI ile güçlendirilmiş çözümler
-      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {useCases.map(uc => (
-        <div class="p-6 rounded-2xl bg-white dark:bg-surface-800 border border-surface-200 dark:border-surface-700 hover:border-primary-300 dark:hover:border-primary-600 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/5 group">
-          <!-- Header -->
-          <div class="flex items-start gap-4 mb-4">
-            <div class="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform" set:html={uc.icon} />
-            <div>
-              <h3 class="text-lg font-semibold text-surface-900 dark:text-surface-50">
-                {uc.title}
-              </h3>
-              <p class="text-xs font-medium text-primary-600 dark:text-primary-400">
-                {uc.subtitle}
-              </p>
-            </div>
-          </div>
-
-          <!-- Description -->
-          <p class="text-sm text-surface-600 dark:text-surface-400 leading-relaxed mb-4">
+    <!-- Use case cards — 2-column grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {useCases.map((uc, i) => (
+        <div class={`widget p-6 sm:p-7 group reveal reveal-delay-${(i % 2) + 1}`}>
+          <h3 class="font-display text-lg font-bold text-surface-900 dark:text-white mb-1">
+            {uc.title}
+          </h3>
+          <p class="text-xs font-mono text-accent-400 mb-3">
+            {uc.subtitle}
+          </p>
+          <p class="text-sm text-surface-500 dark:text-surface-500 leading-relaxed mb-4">
             {uc.description}
           </p>
-
-          <!-- Evidence -->
-          <ul class="space-y-2 mb-4">
-            {uc.evidence.map(e => (
-              <li class="flex items-start gap-2 text-sm text-surface-700 dark:text-surface-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-1 text-primary-500"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
-                <span>{e}</span>
-              </li>
-            ))}
-          </ul>
-
-          <!-- Tags -->
           <div class="flex flex-wrap gap-1.5">
-            {uc.tags.map(tag => (
-              <span class="px-2 py-0.5 text-xs rounded-full bg-surface-100 dark:bg-surface-700 text-surface-500 dark:text-surface-400">
+            {uc.tags.map((tag) => (
+              <span class="px-2 py-0.5 text-[0.6875rem] font-mono rounded bg-surface-100 dark:bg-white/[0.04] border border-surface-200 dark:border-white/[0.06] text-surface-500 dark:text-surface-500">
                 {tag}
               </span>
             ))}

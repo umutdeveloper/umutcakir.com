@@ -1,5 +1,6 @@
 ---
 import SEO from '../components/common/SEO.astro';
+import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 
 interface Props {
@@ -23,6 +24,7 @@ const { title, description, image, type, publishDate, tags } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title="Umut Çakır Blog" href="/rss.xml" />
+    <ViewTransitions />
     <SEO
       title={title}
       description={description}
@@ -33,20 +35,67 @@ const { title, description, image, type, publishDate, tags } = Astro.props;
     />
     <!-- Theme script - runs before render to prevent flash -->
     <script is:inline>
-      const theme = (() => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
+      function applyTheme() {
+        const theme = (() => {
+          if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+          }
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        })();
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
         }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      })();
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
       }
+      applyTheme();
+      document.addEventListener('astro:after-swap', applyTheme);
     </script>
   </head>
-  <body class="min-h-screen bg-surface-50 text-surface-900 dark:bg-surface-900 dark:text-surface-100 antialiased transition-colors duration-300">
+  <body class="min-h-screen antialiased transition-colors duration-300">
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" id="scroll-progress" style="width: 0%"></div>
     <slot />
+    <!-- Console Easter Egg + Scroll Progress + Reveal Observer -->
+    <script>
+      console.log(
+        `%c UC. %c Merhaba! 👋\n%c Kaynak koduna merak mı duyuyorsun?\n%c github.com/umutcakir`,
+        'color: #E8A849; font-size: 24px; font-weight: bold',
+        'color: #EDEDEC; font-size: 14px',
+        'color: #6B6B6B; font-size: 12px',
+        'color: #2DD4A8; font-size: 12px'
+      );
+
+      function updateScrollProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        const bar = document.getElementById('scroll-progress');
+        if (bar) bar.style.width = progress + '%';
+      }
+      window.addEventListener('scroll', updateScrollProgress, { passive: true });
+      updateScrollProgress();
+
+      // Scroll reveal with IntersectionObserver
+      function initReveal() {
+        const els = document.querySelectorAll('.reveal:not(.visible)');
+        if (!els.length) return;
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(el => io.observe(el));
+      }
+
+      // Re-init after view transitions
+      document.addEventListener('astro:page-load', () => {
+        updateScrollProgress();
+        initReveal();
+      });
+    </script>
   </body>
 </html>

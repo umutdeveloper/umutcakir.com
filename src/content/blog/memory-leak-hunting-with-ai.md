@@ -2,6 +2,7 @@
 title: "Memory Leak Avında AI Ne Kadar İşe Yarıyor?"
 description: "Production uygulamalarda memory leak bulmak zanaattır. AI bu zanaatta usta mı, çırak mı? Gerçek senaryolarla test ettim."
 pubDate: 2026-02-22
+heroImage: /assets/memory-leak-hunting.png
 tags: ["performance", "ai", "memory-leak", "rxjs", "javascript", "debugging"]
 lang: "tr"
 ---

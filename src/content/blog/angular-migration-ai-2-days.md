@@ -2,6 +2,7 @@
 title: "Angular 15→21 Migration'ı AI ile 2 Günde Nasıl Bitirdim?"
 description: "6 major Angular version geçişini AI destekli workflow ile 2 günde tamamladım. Nerede 10x hız kazandım, nerede AI'a güvenmemem gerektiğini öğrendim."
 pubDate: 2026-02-24
+heroImage: /assets/angular-migration.png
 tags: ["angular", "ai", "migration", "cursor", "frontend", "productivity"]
 lang: "tr"
 ---

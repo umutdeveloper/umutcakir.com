@@ -1,34 +1,61 @@
 ---
 import { getCollection } from 'astro:content';
-import PostCard from '../../components/blog/PostCard.astro';
 
 const posts = await getCollection('blog', ({ data }) => !data.draft);
 const latestPosts = posts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('tr-TR', { year: 'numeric', month: 'short', day: 'numeric' });
+}
 ---
 
 {latestPosts.length > 0 && (
-  <section class="py-16 sm:py-20 bg-surface-100/50 dark:bg-surface-800/30 border-t border-surface-200 dark:border-surface-700">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="flex items-center justify-between mb-10">
-        <h2 class="text-sm font-semibold uppercase tracking-wider text-surface-500 dark:text-surface-400">
-          Son Yazılar
-        </h2>
-        <a href="/blog" class="text-sm font-medium text-primary-600 dark:text-primary-400 hover:underline">
+  <section class="py-20 sm:py-28">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-end justify-between mb-12 reveal">
+        <div>
+          <span class="section-label">Blog</span>
+          <h2 class="section-title text-3xl sm:text-4xl mt-3">
+            Son yazılar<span class="text-accent-400">.</span>
+          </h2>
+        </div>
+        <a href="/blog" class="text-sm font-medium text-accent-400 hover:text-accent-300 transition-colors hidden sm:block">
           Tümünü gör →
         </a>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {latestPosts.map(post => (
-          <PostCard
-            title={post.data.title}
-            description={post.data.description}
-            pubDate={post.data.pubDate}
-            slug={post.id.replace(/\.mdx?$/, '')}
-            tags={post.data.tags}
-          />
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {latestPosts.map((post, i) => (
+          <a
+            href={`/blog/${post.id.replace(/\.mdx?$/, '')}`}
+            class={`widget p-6 group block reveal reveal-delay-${i + 1}`}
+          >
+            <div class="text-xs font-mono text-surface-400 dark:text-surface-500 mb-3">
+              {formatDate(post.data.pubDate)}
+            </div>
+            <h3 class="font-display text-base font-bold text-surface-900 dark:text-white mb-2 group-hover:text-accent-400 transition-colors line-clamp-2">
+              {post.data.title}
+            </h3>
+            <p class="text-sm text-surface-500 dark:text-surface-500 leading-relaxed line-clamp-3">
+              {post.data.description}
+            </p>
+            {post.data.tags && post.data.tags.length > 0 && (
+              <div class="flex flex-wrap gap-1.5 mt-4">
+                {post.data.tags.slice(0, 3).map((tag: string) => (
+                  <span class="px-2 py-0.5 text-[0.625rem] font-mono rounded bg-surface-100 dark:bg-white/[0.04] border border-surface-200 dark:border-white/[0.06] text-surface-500 dark:text-surface-500">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </a>
         ))}
+      </div>
+
+      <div class="text-center mt-8 sm:hidden">
+        <a href="/blog" class="text-sm font-medium text-accent-400">Tümünü gör →</a>
       </div>
     </div>
   </section>

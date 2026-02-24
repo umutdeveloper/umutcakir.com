@@ -2,6 +2,7 @@
 title: "Senior Developer Olarak AI'ı Kullanma Stratejim"
 description: "AI'ı ne zaman kullanıyorum, ne zaman kapatıyorum? 1000+ commit ve 400+ ticket deneyiminden çıkardığım pratik güven skalası ve günlük workflow."
 pubDate: 2026-02-23
+heroImage: /assets/senior-dev-ai.png
 tags: ["ai", "strategy", "senior-developer", "productivity", "software-engineering"]
 lang: "tr"
 ---

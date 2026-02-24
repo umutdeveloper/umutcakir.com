@@ -3,7 +3,7 @@
 
 <button
   id="theme-toggle"
-  class="p-2 rounded-lg text-surface-600 dark:text-surface-400 hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors"
+  class="p-2 rounded-lg text-surface-500 dark:text-surface-400 hover:text-accent-500 dark:hover:text-accent-400 hover:bg-surface-100 dark:hover:bg-surface-800 transition-colors"
   aria-label="Tema değiştir"
 >
   <!-- Sun icon (shown in dark mode) -->
@@ -17,16 +17,17 @@
 </button>
 
 <script>
-  const toggle = document.getElementById('theme-toggle');
-
-  toggle?.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.contains('dark');
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    }
+  document.addEventListener('astro:page-load', () => {
+    const toggle = document.getElementById('theme-toggle');
+    toggle?.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
   });
 </script>

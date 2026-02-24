@@ -14,13 +14,14 @@ const allTags = [...new Set(sortedPosts.flatMap(post => post.data.tags))].sort()
   title="Blog"
   description="AI ile yazılım geliştirme, verimlilik stratejileri ve mühendislik deneyimleri hakkında yazılar."
 >
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
     <!-- Header -->
     <div class="mb-10">
-      <h1 class="text-3xl sm:text-4xl font-bold text-surface-900 dark:text-surface-50 mb-4">
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-surface-900 dark:text-[#EDEDEC] mb-4">
         Blog
       </h1>
-      <p class="text-lg text-surface-600 dark:text-surface-400">
+      <div class="h-px w-16 bg-accent-400/40 mb-4"></div>
+      <p class="text-lg text-surface-500 dark:text-surface-400">
         AI ile daha etkili geliştirme, verimlilik stratejileri ve gerçek dünya mühendislik deneyimleri hakkında yazıyorum.
       </p>
     </div>
@@ -29,7 +30,7 @@ const allTags = [...new Set(sortedPosts.flatMap(post => post.data.tags))].sort()
     {allTags.length > 0 && (
       <div class="flex flex-wrap gap-2 mb-10">
         {allTags.map(tag => (
-          <span class="px-3 py-1.5 text-xs font-medium rounded-full border border-surface-200 dark:border-surface-700 text-surface-600 dark:text-surface-400 bg-white dark:bg-surface-800">
+          <span class="badge-tech">
             {tag}
           </span>
         ))}
@@ -38,7 +39,7 @@ const allTags = [...new Set(sortedPosts.flatMap(post => post.data.tags))].sort()
 
     <!-- Posts grid -->
     {sortedPosts.length > 0 ? (
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {sortedPosts.map(post => (
           <PostCard
             title={post.data.title}
