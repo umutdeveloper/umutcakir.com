@@ -55,6 +55,32 @@
   .house .pin{cursor:default}
   .house .pin circle{transition:transform .2s;transform-box:fill-box;transform-origin:center}
   .house .pin:hover circle{transform:scale(1.15)}
+  /* living drawing: CSS only, no JS */
+  .house .pin{transform-box:fill-box;transform-origin:center;animation:pop .5s cubic-bezier(.3,1.6,.5,1) both}
+  .house .pin:nth-of-type(1){animation-delay:.5s} .house .pin:nth-of-type(2){animation-delay:.68s} .house .pin:nth-of-type(3){animation-delay:.86s}
+  .house .pin:nth-of-type(4){animation-delay:1.04s} .house .pin:nth-of-type(5){animation-delay:1.22s} .house .pin:nth-of-type(6){animation-delay:1.4s}
+  @keyframes pop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:none}}
+  .house .note{animation:fadein .6s 1.8s both} .house .draw{stroke-dasharray:1;animation:draw 1s 1.9s ease-out both} .house .head{animation:fadein .2s 2.8s both}
+  @keyframes fadein{from{opacity:0}} @keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+  .house .paper{transform-box:fill-box;transform-origin:center;animation:drift 5s ease-in-out infinite alternate}
+  .house .p2{animation-duration:6.5s;animation-delay:-2s} .house .p3{animation-duration:4.2s;animation-delay:-1s}
+  @keyframes drift{from{transform:translate(0,0) rotate(0)}to{transform:translate(-7px,-9px) rotate(-14deg)}}
+  .house .door{transform-box:fill-box;transform-origin:left center;animation:creak 6s ease-in-out infinite}
+  @keyframes creak{0%,55%,100%{transform:none}72%{transform:scaleX(.62)}}
+  .house .beep{animation:beep 2.6s steps(1) infinite}
+  @keyframes beep{0%,40%{opacity:0}50%,100%{opacity:1}}
+  .check svg *{transform-box:fill-box}
+  .i-key{animation:peek 4s ease-in-out infinite}
+  @keyframes peek{0%,50%,100%{transform:none}70%{transform:translateX(9px)}}
+  .i-door{transform-origin:left center;animation:creak 5s ease-in-out infinite}
+  .i-blink{animation:beep 2.2s steps(1) infinite}
+  .i-paper{transform-origin:center;animation:drift 4.5s ease-in-out infinite alternate} .i-p2{animation-duration:5.8s;animation-delay:-2s}
+  .i-dial{transform-origin:center;animation:dial 5s ease-in-out infinite}
+  @keyframes dial{0%,30%,100%{transform:none}50%{transform:rotate(80deg)}70%{transform:rotate(-40deg)}}
+  .i-hop{animation:hop 3.6s ease-in-out infinite}
+  @keyframes hop{0%,70%,100%{transform:none}80%{transform:translateY(-6px)}90%{transform:translateY(0)}}
+  .i-x{transform-origin:center;animation:xpulse 2.2s ease-in-out infinite}
+  @keyframes xpulse{0%,100%{transform:none}50%{transform:scale(1.18)}}
   .legend{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px;color:var(--ink-2)}
   .legend li{display:flex;align-items:center;gap:7px}
   .legend b{width:22px;height:22px;border:1.5px solid var(--red);color:var(--red);border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700}

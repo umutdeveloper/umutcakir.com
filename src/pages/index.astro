@@ -3,20 +3,20 @@ import Base from '../layouts/Base.astro';
 ---
 <Base
   title="Security check for AI-built apps (Lovable, Replit, Claude Code) | Umut Çakır"
-  description="Is your AI-built app safe to launch? A fixed-price security and go-live check for apps built with Lovable, Bolt, Replit or Claude Code. Plain-English report in 3 business days."
+  description="Is your AI-built app safe to launch? A fixed-price security and UX check for apps built with Lovable, Bolt, Replit or Claude Code. Plain-English report in 3 business days."
 >
 <main>
   <div class="hero">
     <div class="c grid">
       <div class="copy">
-        <p class="eyebrow">Security &amp; go-live checks for apps built with Lovable, Replit, Claude Code &amp; friends</p>
+        <p class="eyebrow">Security &amp; UX checks for apps built with Lovable, Replit, Claude Code &amp; friends</p>
         <h1>Is your AI‑built app <span class="mark">safe to launch?</span></h1>
-        <p class="lead">I check it like a home inspection — every room, in plain English. Before customers trust it with their data and their money, you’ll know exactly what to fix first.</p>
+        <p class="lead">I check it like a home inspection — every room, in plain English. Is it safe? Is it easy to use? Before customers trust it with their data and their money, you’ll know exactly what to fix first.</p>
         <div class="actions">
           <a class="btn" href="/go-live-check">Book a Go-Live Check — $290 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <a class="tlink" href="#sample">See a sample report</a>
         </div>
-        <ul class="facts"><li>Fixed price</li><li>Report in 3 business days</li><li>No calls needed</li></ul>
+        <ul class="facts"><li>Security + UX</li><li>Fixed price</li><li>Report in 3 business days</li><li>No calls needed</li></ul>
       </div>
 
       <div class="art">
@@ -37,21 +37,27 @@ import Base from '../layouts/Base.astro';
             <path d="M98 420h112l-7 -11H105z" fill="#FFD84A"/>
             <path d="M203 417h12"/><circle cx="220" cy="417" r="4.5" fill="#fff"/>
             <!-- 02 back door ajar (ground floor right, side wall) -->
-            <path d="M530 420V338"/><path d="M530 338l34 -10v92l-34 0" fill="#fff"/><path d="M552 378h4"/>
+            <path d="M530 420V338"/>
             <rect x="372" y="346" width="88" height="56" rx="4" fill="#fff"/><path d="M384 362h44M384 376h60M384 390h30"/>
             <!-- 03 open window, papers flying out (upper floor left) -->
             <rect x="110" y="232" width="110" height="58" fill="#fff"/><path d="M110 254h110"/><path d="M110 232l-26 -18h110l26 18" fill="#fff"/>
-            <path d="M58 196l-14 -10 6 -14 16 8z" fill="#fff"/><path d="M28 238l-12 2 2 -14 12 2z" fill="#fff"/><path d="M76 168l-8 -12 12 -6 6 12z" fill="#fff"/>
+            
             <!-- filing cabinet with open drawer -->
             <rect x="236" y="246" width="44" height="64" fill="#fff"/><path d="M236 268h44M236 288h44"/><path d="M232 272h52v-8" />
             <!-- 04 safe (upper floor right) -->
             <rect x="420" y="236" width="70" height="66" rx="4" fill="#fff"/><circle cx="455" cy="269" r="14"/><path d="M455 259v4M455 279v-4M445 269h4M465 269h-4"/>
             <!-- 06 smoke alarm on ceiling (upper floor right) -->
-            <path d="M336 200v10"/><ellipse cx="336" cy="216" rx="18" ry="6" fill="#fff"/><path d="M330 228l-4 8M342 228l4 8" stroke-dasharray="2 5"/>
+            <path d="M336 200v10"/><ellipse cx="336" cy="216" rx="18" ry="6" fill="#fff"/>
             <!-- 05 basement boxes -->
             <path d="M330 470h70v50h-70z" fill="#fff"/><path d="M330 470l10-14h70l-10 14"/><path d="M400 470l10-14v50l-10 14"/>
             <path d="M420 486h60v34h-60z" fill="#fff"/><path d="M352 494h26"/>
             <path d="M90 520v-56h120v56" fill="#fff"/><path d="M90 480h120"/>
+          </g>
+          <!-- moving parts (CSS only) -->
+          <g fill="none" stroke="#1B1915" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)">
+            <g class="door"><path d="M530 338l34 -10v92l-34 0" fill="#fff"/><path d="M552 378h4"/></g>
+            <path class="paper p1" d="M58 196l-14 -10 6 -14 16 8z" fill="#fff"/><path class="paper p2" d="M28 238l-12 2 2 -14 12 2z" fill="#fff"/><path class="paper p3" d="M76 168l-8 -12 12 -6 6 12z" fill="#fff"/>
+            <path class="beep" d="M330 228l-4 8M342 228l4 8" stroke-dasharray="2 5"/>
           </g>
           <!-- inspector's red-pen pins -->
           <g font-family="Schibsted Grotesk, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle">
@@ -63,10 +69,10 @@ import Base from '../layouts/Base.astro';
             <g class="pin"><circle cx="374" cy="216" r="15" fill="#fff" stroke="#D23B1E" stroke-width="2"/><text x="374" y="221" fill="#D23B1E">6</text></g>
           </g>
           <!-- handwritten note -->
-          <g font-family="Schibsted Grotesk, system-ui, sans-serif" font-style="italic" font-size="17" fill="#D23B1E">
+          <g class="note" font-family="Schibsted Grotesk, system-ui, sans-serif" font-style="italic" font-size="17" fill="#D23B1E">
             <text x="60" y="584">keys under the mat!</text>
           </g>
-          <path d="M218 578c34-4 30-60 6-150" fill="none" stroke="#D23B1E" stroke-width="1.8" stroke-linecap="round"/><path d="M216 440l8-12 6 14" fill="none" stroke="#D23B1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="draw" pathLength="1" d="M218 578c34-4 30-60 6-150" fill="none" stroke="#D23B1E" stroke-width="1.8" stroke-linecap="round"/><path class="head" d="M216 440l8-12 6 14" fill="none" stroke="#D23B1E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <ol class="legend"><li><b>1</b>Secret keys</li><li><b>2</b>Admin pages</li><li><b>3</b>Customer data</li><li><b>4</b>Payments</li><li><b>5</b>Backups</li><li><b>6</b>Error alerts</li></ol>
       </div>
@@ -81,28 +87,28 @@ import Base from '../layouts/Base.astro';
 
   <section id="checks">
     <div class="c grid">
-      <div class="head reveal"><p class="eyebrow">What I check</p><h2>Six things that decide whether your app is <em>ready</em>.</h2><p class="lead">Each one is a real problem in apps built with Lovable, Bolt, Replit or Claude Code — usually running on Supabase or Firebase — explained in words that don’t need a developer to translate.</p></div>
+      <div class="head reveal"><p class="eyebrow">What I check</p><h2>Six things that decide whether your app is <em>ready</em> — plus how it feels to use.</h2><p class="lead">Each one is a real problem in apps built with Lovable, Bolt, Replit or Claude Code — usually running on Supabase or Firebase — explained in words that don’t need a developer to translate. Then I use your app the way your customers do, and note what gets in their way.</p></div>
       <div class="checks">
         <div class="check reveal"><div class="top"><span class="num">1</span>
-          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><path d="M8 52h80l-8 14H16z" fill="#FFD84A"/><circle cx="62" cy="50" r="7" fill="#fff"/><path d="M55 50H30M38 50v6M44 50v4"/></svg></div>
+          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><path d="M8 52h80l-8 14H16z" fill="#FFD84A"/><g class="i-key"><circle cx="62" cy="50" r="7" fill="#fff"/><path d="M55 50H30M38 50v6M44 50v4"/></g></svg></div>
           <h3>Secret keys left in your app</h3><p class="meta">“keys under the doormat”</p><p>API keys sitting in your app’s code, where anyone can copy them.</p><p class="means"><b>Means:</b> surprise bills, or a stranger in your data.</p></div>
         <div class="check reveal"><div class="top"><span class="num">2</span>
-          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><path d="M24 66V8h40v58"/><path d="M24 8l30 8v56l-30-6z" fill="#fff"/><path d="M46 40h3"/><path d="M70 30l12-6M70 40h14M70 50l12 6" stroke="#D23B1E"/></svg></div>
+          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><path d="M24 66V8h40v58"/><g class="i-door"><path d="M24 8l30 8v56l-30-6z" fill="#fff"/><path d="M46 40h3"/></g><path class="i-blink" d="M70 30l12-6M70 40h14M70 50l12 6" stroke="#D23B1E"/></svg></div>
           <h3>Admin pages anyone can open</h3><p class="meta">“the back door is unlocked”</p><p>Admin pages that open without logging in.</p><p class="means"><b>Means:</b> anyone can change your prices, bookings or users.</p></div>
         <div class="check reveal"><div class="top"><span class="num">3</span>
-          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><rect x="34" y="26" width="52" height="40" fill="#fff"/><path d="M34 42h52"/><path d="M22 18l-10-6 4-10 12 6z" fill="#fff"/><path d="M14 40l-10 2 2-12 10 2z" fill="#fff"/></svg></div>
+          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><rect x="34" y="26" width="52" height="40" fill="#fff"/><path d="M34 42h52"/><path class="i-paper" d="M22 18l-10-6 4-10 12 6z" fill="#fff"/><path class="i-paper i-p2" d="M14 40l-10 2 2-12 10 2z" fill="#fff"/></svg></div>
           <h3>Customer data strangers can read</h3><p class="meta">“files out the window”</p><p>One customer can see another customer’s details — or a stranger can see everyone’s.</p><p class="means"><b>Means:</b> a data leak, and the trust that goes with it.</p></div>
         <div class="check reveal"><div class="top"><span class="num">4</span>
-          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><rect x="22" y="8" width="56" height="56" rx="4" fill="#fff"/><circle cx="50" cy="36" r="12"/><path d="M50 26v4M50 46v-4M40 36h4M60 36h-4"/><path d="M28 64v6M72 64v6"/></svg></div>
+          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><rect x="22" y="8" width="56" height="56" rx="4" fill="#fff"/><g class="i-dial"><circle cx="50" cy="36" r="12"/><path d="M50 26v4M50 46v-4M40 36h4M60 36h-4"/></g><path d="M28 64v6M72 64v6"/></svg></div>
           <h3>Payments that aren’t verified</h3><p class="meta">“nobody checked the safe”</p><p>Payments that look fine but aren’t verified, and refunds nobody tested.</p><p class="means"><b>Means:</b> customers marked “paid” who never paid.</p></div>
         <div class="check reveal"><div class="top"><span class="num">5</span>
-          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><path d="M14 30h44v36H14z" fill="#fff"/><path d="M14 30l8-10h44l-8 10M58 30l8-10v36l-8 10"/><path d="M26 44h20"/><path d="M62 52h22v14H62z" fill="#FFD84A"/></svg></div>
+          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><path d="M14 30h44v36H14z" fill="#fff"/><path d="M14 30l8-10h44l-8 10M58 30l8-10v36l-8 10"/><path d="M26 44h20"/><path class="i-hop" d="M62 52h22v14H62z" fill="#FFD84A"/></svg></div>
           <h3>Backups nobody has tested</h3><p class="meta">“boxes in the basement”</p><p>Backups that exist, but have never been restored even once.</p><p class="means"><b>Means:</b> one bad click and the data is gone for good.</p></div>
         <div class="check reveal"><div class="top"><span class="num">6</span>
-          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><path d="M48 4v10"/><ellipse cx="48" cy="22" rx="26" ry="8" fill="#fff"/><path d="M40 38l-6 12M56 38l6 12M48 40v14" stroke-dasharray="2 6"/><path d="M70 50l14 14M84 50L70 64" stroke="#D23B1E"/></svg></div>
+          <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><path d="M48 4v10"/><ellipse cx="48" cy="22" rx="26" ry="8" fill="#fff"/><path class="i-blink" d="M40 38l-6 12M56 38l6 12M48 40v14" stroke-dasharray="2 6"/><path class="i-x" d="M70 50l14 14M84 50L70 64" stroke="#D23B1E"/></svg></div>
           <h3>Errors nobody hears about</h3><p class="meta">“smoke alarm, no batteries”</p><p>Errors happen silently, and you only hear about them from customers.</p><p class="means"><b>Means:</b> problems that grow for weeks before anyone notices.</p></div>
       </div>
-      <p class="plus reveal"><b>Plus: where you lose customers.</b> A secure app can still turn people away. I also mark the 3–5 places where visitors give up before booking or paying — like being forced to create an account first.</p>
+      <p class="plus reveal"><b>Plus: a UX review.</b> A secure app can still frustrate people. I also flag what confuses, annoys or turns away your customers — like a password you can’t see as you type, or having to sign up before you can book.</p>
       <p class="more reveal"><a class="tlink" href="/go-live-check#checklist">See the full checklist</a> →</p>
     </div>
   </section>
@@ -129,7 +135,7 @@ import Base from '../layouts/Base.astro';
         <ul class="items">
           <li><span class="pill p-a">Fix soon</span><div><strong>A customer could pose as one of your cleaners and see their door codes.</strong><p>When you add a cleaner by email, the app trusts an email field that customers can change themselves. This only appeared after the cleaner feature was added.</p></div></li>
           <li><span class="pill p-a">Minor</span><div><strong>One account could flood your calendar with fake bookings.</strong><p>There’s no limit on how many bookings a customer can make.</p></div></li>
-          <li><span class="pill p-n">Lost customers</span><div><strong>Nobody can book without creating an account first.</strong><p>Many visitors give up at this point. Let them book first, and create the account at the end.</p></div></li>
+          <li><span class="pill p-n">UX</span><div><strong>Nobody can book without creating an account first.</strong><p>Many visitors give up at this point. Let them book first, and create the account at the end.</p></div></li>
           <li><span class="pill p-g">Looks good</span><div><strong>Customers only ever see their own bookings and photos.</strong></div></li>
           <li><span class="pill p-g">Looks good</span><div><strong>Home photos are in private storage, not at public links.</strong></div></li>
           <li><span class="pill p-g">Looks good</span><div><strong>Nobody can make themselves the owner.</strong></div></li>
@@ -155,7 +161,7 @@ import Base from '../layouts/Base.astro';
       <div class="head"><p class="eyebrow">Pricing</p><h2>One fixed price. No hourly surprises.</h2></div>
       <div class="plans">
         <div class="plan"><span class="tag"></span><h3>Go-Live Check</h3><div class="price">$290</div><div class="when">Report in 3 business days</div>
-          <ul><li>All six checks</li><li>Plus: where visitors give up</li><li>Plain-English report, ranked by urgency</li><li>10-minute video walkthrough</li><li>One app, up to ~20 screens</li></ul>
+          <ul><li>All six checks</li><li>Plus: a UX review</li><li>Plain-English report, ranked by urgency</li><li>10-minute video walkthrough</li><li>One app, up to ~20 screens</li></ul>
           <a class="btn ghost" href="/go-live-check#start">Start a check</a></div>
         <div class="plan best"><span class="tag">Recommended</span><h3>Check + Fix</h3><div class="price"><small>from </small>$990</div><div class="when">Fixed quote after the check</div>
           <ul><li>Everything in the Go-Live Check</li><li>I fix every critical and serious issue</li><li>Re-tested, with before/after proof</li><li>Backups and error alerts set up</li></ul>
@@ -177,7 +183,7 @@ import Base from '../layouts/Base.astro';
       <div class="tx reveal">
         <p class="eyebrow">Who you’d be working with</p>
         <h2>You talk to the person doing the work.</h2>
-        <p>I’ve built software for nine years. For the last four, I’ve worked on the desktop app of an end-to-end encrypted messaging product — the kind where a small security mistake is never small.</p>
+        <p>I’ve been building for the web since 2013. First three years as a freelancer, designing and building websites for clients. Then ten years as a software engineer. For the last four, I’ve worked on the desktop app of an end-to-end encrypted messaging product — the kind where a small security mistake is never small.</p>
         <p>I use AI tools every day, so I know where they shine and where they quietly cut corners. No sales team, no juniors. Just me, and a careful look at your app.</p>
         <div class="sig">
           <svg width="150" height="44" viewBox="0 0 150 44" fill="none" stroke="#1B1915" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><path d="M6 30c4-16 9-20 10-8s5 12 9-2 6-8 7 2 5 6 9-8c4-8 7 2 10 6s8-12 13-10 4 12 10 7 9-12 15-5 11 4 17-3 14 3 22-3"/><path d="M8 38c40 2 90-1 130-4" stroke-width="1.4"/></svg>
