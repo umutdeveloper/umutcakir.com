@@ -102,6 +102,7 @@ import Base from '../layouts/Base.astro';
           <svg viewBox="0 0 96 72" fill="none" stroke="#1B1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#hand)"><path d="M48 4v10"/><ellipse cx="48" cy="22" rx="26" ry="8" fill="#fff"/><path d="M40 38l-6 12M56 38l6 12M48 40v14" stroke-dasharray="2 6"/><path d="M70 50l14 14M84 50L70 64" stroke="#D23B1E"/></svg></div>
           <h3>Errors nobody hears about</h3><p class="meta">“smoke alarm, no batteries”</p><p>Errors happen silently, and you only hear about them from customers.</p><p class="means"><b>Means:</b> problems that grow for weeks before anyone notices.</p></div>
       </div>
+      <p class="plus reveal"><b>Plus: where you lose customers.</b> A secure app can still turn people away. I also mark the 3–5 places where visitors give up before booking or paying — like being forced to create an account first.</p>
       <p class="more reveal"><a class="tlink" href="/go-live-check#checklist">See the full checklist</a> →</p>
     </div>
   </section>
@@ -128,6 +129,7 @@ import Base from '../layouts/Base.astro';
         <ul class="items">
           <li><span class="pill p-a">Fix soon</span><div><strong>A customer could pose as one of your cleaners and see their door codes.</strong><p>When you add a cleaner by email, the app trusts an email field that customers can change themselves. This only appeared after the cleaner feature was added.</p></div></li>
           <li><span class="pill p-a">Minor</span><div><strong>One account could flood your calendar with fake bookings.</strong><p>There’s no limit on how many bookings a customer can make.</p></div></li>
+          <li><span class="pill p-n">Lost customers</span><div><strong>Nobody can book without creating an account first.</strong><p>Many visitors give up at this point. Let them book first, and create the account at the end.</p></div></li>
           <li><span class="pill p-g">Looks good</span><div><strong>Customers only ever see their own bookings and photos.</strong></div></li>
           <li><span class="pill p-g">Looks good</span><div><strong>Home photos are in private storage, not at public links.</strong></div></li>
           <li><span class="pill p-g">Looks good</span><div><strong>Nobody can make themselves the owner.</strong></div></li>
@@ -153,7 +155,7 @@ import Base from '../layouts/Base.astro';
       <div class="head"><p class="eyebrow">Pricing</p><h2>One fixed price. No hourly surprises.</h2></div>
       <div class="plans">
         <div class="plan"><span class="tag"></span><h3>Go-Live Check</h3><div class="price">$290</div><div class="when">Report in 3 business days</div>
-          <ul><li>All six checks</li><li>Plain-English report, ranked by urgency</li><li>10-minute video walkthrough</li><li>One app, up to ~20 screens</li></ul>
+          <ul><li>All six checks</li><li>Plus: where visitors give up</li><li>Plain-English report, ranked by urgency</li><li>10-minute video walkthrough</li><li>One app, up to ~20 screens</li></ul>
           <a class="btn ghost" href="/go-live-check#start">Start a check</a></div>
         <div class="plan best"><span class="tag">Recommended</span><h3>Check + Fix</h3><div class="price"><small>from </small>$990</div><div class="when">Fixed quote after the check</div>
           <ul><li>Everything in the Go-Live Check</li><li>I fix every critical and serious issue</li><li>Re-tested, with before/after proof</li><li>Backups and error alerts set up</li></ul>
@@ -171,7 +173,7 @@ import Base from '../layouts/Base.astro';
 
   <section id="about">
     <div class="c grid about">
-      <div class="ph reveal">Photo<span class="tagnote">Umut, your inspector</span></div>
+      <div class="ph reveal"><img src="/assets/umut.jpg" width="880" height="1100" alt="Umut Çakır" loading="lazy" decoding="async" /><span class="tagnote">Umut, your inspector</span></div>
       <div class="tx reveal">
         <p class="eyebrow">Who you’d be working with</p>
         <h2>You talk to the person doing the work.</h2>
@@ -211,4 +213,7 @@ import Base from '../layouts/Base.astro';
 </Base>
 <style>
   .more{grid-column:1 / -1;margin-top:28px;font-size:18px}
+  .plus{grid-column:1 / span 8;margin-top:36px;padding:20px 24px;border-left:4px solid var(--yellow);background:#fff;border-radius:0 12px 12px 0;color:var(--ink-2);font-size:18px}
+  .plus b{color:var(--ink);font-weight:600}
+  @media (max-width:900px){.plus{grid-column:1 / -1}}
 </style>
