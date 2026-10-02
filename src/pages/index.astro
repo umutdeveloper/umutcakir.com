@@ -118,7 +118,7 @@ import Base from '../layouts/Base.astro';
       <div class="intro reveal">
         <p class="eyebrow">The report</p>
         <h2>What you get, in plain English.</h2>
-        <p class="lead">Every finding says what’s wrong, why it matters to your business, and how urgent it is. Plus a 10-minute video walking you through it.</p>
+        <p class="lead">Every finding says what’s wrong, why it matters to your business, and how urgent it is. Plus a 10-minute video walking you through it, and a ready-to-paste fix prompt for Lovable or Cursor.</p>
         <p class="lead">These are real findings from a test app I had Lovable build. No real customer data.</p>
       </div>
       <article class="report reveal" aria-label="Sample report">
@@ -161,7 +161,7 @@ import Base from '../layouts/Base.astro';
       <div class="head"><p class="eyebrow">Pricing</p><h2>One fixed price. No hourly surprises.</h2></div>
       <div class="plans">
         <div class="plan"><span class="tag"></span><h3>Go-Live Check</h3><div class="price">$290</div><div class="when">Report in 3 business days</div>
-          <ul><li>All six checks</li><li>Plus: a UX review</li><li>Plain-English report, ranked by urgency</li><li>10-minute video walkthrough</li><li>One app, up to ~20 screens</li></ul>
+          <ul><li>All six checks</li><li>Plus: a UX review</li><li>Plain-English report, ranked by urgency</li><li>Fix prompts to paste into Lovable or Cursor</li><li>10-minute video walkthrough</li><li>One app, up to ~20 screens</li></ul>
           <a class="btn ghost" href="/go-live-check#start">Start a check</a></div>
         <div class="plan best"><span class="tag">Recommended</span><h3>Check + Fix</h3><div class="price"><small>from </small>$990</div><div class="when">Fixed quote after the check</div>
           <ul><li>Everything in the Go-Live Check</li><li>I fix every critical and serious issue</li><li>Re-tested, with before/after proof</li><li>Backups and error alerts set up</li></ul>
@@ -202,6 +202,7 @@ import Base from '../layouts/Base.astro';
         <details><summary>I’m not technical. Will I understand the report?<i></i></summary><p>That’s the point of it. Every issue says what’s wrong, why it matters to your business, and how urgent it is — in plain words.</p></details>
         <details><summary>Which tools do you work with?<i></i></summary><p>Apps built with Lovable, Bolt, Replit, Claude Code or Cursor, running on Supabase or Firebase. For Bubble and Base44 I can inspect and report; fixes are limited.</p></details>
         <details><summary>Is my Lovable (or Bolt, Replit) app secure by default?<i></i></summary><p>Sometimes the first version is fine. The most common problem is that the database’s access rules (Supabase “RLS”) are missing or too open, so one customer — or a stranger — can read other people’s data. And every new feature can quietly undo old rules: in my own test app, the first version was solid, and adding cleaners opened a hole.</p></details>
+        <details><summary>Lovable already scans my app. Why pay you?<i></i></summary><p>Run Lovable’s scan and its automated pentest — they’re a good first step, and they catch known attack patterns. I look for what they miss: how your features combine (in my own test app, two harmless rules together exposed customers’ door codes), whether the app is easy to use, and what to fix first, in plain English. And if you want, I fix it.</p></details>
         <details><summary>My app passed a check. Why would I need the Care Plan?<i></i></summary><p>Because your app keeps changing. Each new feature mixes with the old rules in new ways, and that’s where holes appear. The Care Plan re-checks your app every month and after big new features, so a safe app stays safe.</p></details>
         <details><summary>What if you don’t find anything?<i></i></summary><p>Then you know your app is in good shape — and you don’t pay.</p></details>
       </div>

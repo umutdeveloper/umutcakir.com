@@ -31,6 +31,7 @@ const serviceLd = {"@context":"https://schema.org","@type":"Service","name":"Go-
           <li>18 hand checks across 6 areas</li>
           <li>Plus: a UX review</li>
           <li>Plain-English report, ranked by urgency</li>
+          <li>Fix prompts to paste into Lovable or Cursor</li>
           <li>10-minute video walkthrough</li>
           <li>One app, up to ~20 screens</li>
           <li>No calls needed — it’s all written</li>
@@ -113,7 +114,7 @@ const serviceLd = {"@context":"https://schema.org","@type":"Service","name":"Go-
       <div class="deliver">
         <div><b>The report</b><p>Every finding: what’s wrong, why it matters to your business, how urgent it is.</p></div>
         <div><b>The video</b><p>About 10 minutes, walking you through the findings on your own screens.</p></div>
-        <div><b>The fix list</b><p>Ranked and estimated, so you or any developer can start right away.</p></div>
+        <div><b>The fix list</b><p>Ranked and estimated, with a ready-to-paste prompt for Lovable or Cursor, so you or any developer can start right away.</p></div>
         <div><b>One follow-up</b><p>Questions by email for 14 days after the report.</p></div>
       </div>
       <p style="grid-column:1 / -1;margin-top:28px"><a class="tlink" href="/#sample">See a sample report</a></p>
@@ -181,6 +182,7 @@ const serviceLd = {"@context":"https://schema.org","@type":"Service","name":"Go-
         <p class="eyebrow">Questions</p>
         <h2 style="margin-bottom:40px">Before you order.</h2>
         <details open><summary>Is my Lovable app secure by default?<i></i></summary><p>Not always. Lovable and similar tools build working apps fast, but the database access rules (Supabase “RLS”) are often missing or too open. That means one customer — or a stranger — may be able to read other people’s data. Even a safe first version can break later: in my own test app, adding a “cleaner” role let a customer pose as a cleaner and see door codes.</p></details>
+        <details><summary>Lovable already scans my app. Why pay you?<i></i></summary><p>Run Lovable’s scan and its automated pentest — they’re a good first step, and they catch known attack patterns. I look for what they miss: how your features combine (in my own test app, two harmless rules together exposed customers’ door codes), whether the app is easy to use, and what to fix first, in plain English. And if you want, I fix it.</p></details>
         <details><summary>How much of my time does this take?<i></i></summary><p>About 15 minutes: a short form and a few invitations. Everything after that is written, and you get a video instead of a meeting.</p></details>
         <details><summary>What if you find something serious halfway through?<i></i></summary><p>You hear about it within 24 hours, with a short note on how to close it quickly — you don’t have to wait for the full report.</p></details>
         <details><summary>Will you keep my app and data confidential?<i></i></summary><p>Yes. I’m happy to sign a standard mutual NDA, and confidentiality is part of my terms anyway. I work on your project only through the access you give me, I don’t copy customer data, and I delete my notes on request after the job.</p></details>
