@@ -1,0 +1,264 @@
+---
+import Base from '../layouts/Base.astro';
+const serviceLd = {"@context":"https://schema.org","@type":"Service","name":"Go-Live Check","serviceType":"Security and go-live review for AI-built web apps","provider":{"@type":"Person","name":"Umut Çakır","url":"https://umutcakir.com"},"areaServed":["US","GB","CA","AU"],"offers":{"@type":"Offer","price":"490","priceCurrency":"USD"}};
+---
+<Base
+  title="Security Check for Lovable, Bolt & Replit Apps — Go-Live Check $490 | Umut Çakır"
+  description="A fixed-price security and go-live check for apps built with Lovable, Bolt, Replit or Claude Code: Supabase RLS, exposed API keys, admin pages, Stripe payments, backups and error alerts. Plain-English report in 3 business days."
+  jsonLd={serviceLd}
+>
+<main>
+  <div class="c"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span>Go-Live Check</nav></div>
+
+  <div class="s-hero">
+    <div class="c grid">
+      <div class="copy">
+        <p class="eyebrow">Go-Live Check</p>
+        <h1>A security check for apps built with <span class="mark">Lovable, Bolt, Replit</span> or Claude Code.</h1>
+        <p class="lead">Before real customers trust your app with their data and their money, I go through it the way a home inspector goes through a house — and give you a plain-English list of what to fix first.</p>
+        <ul class="who">
+          <li>You run a business, and the app you built with AI now handles real customers.</li>
+          <li>You’re about to launch, or about to start taking payments.</li>
+          <li>You’re not a developer, and you want a straight answer — not a 60-page PDF.</li>
+        </ul>
+      </div>
+
+      <aside class="buy" id="start" aria-label="Order">
+        <span class="label" style="font-size:15px;color:var(--ink-3);font-weight:500">Fixed price</span>
+        <div class="price">$490</div>
+        <div class="when">Report in 3 business days</div>
+        <ul>
+          <li>18 hand checks across 6 areas</li>
+          <li>Plain-English report, ranked by urgency</li>
+          <li>10-minute video walkthrough</li>
+          <li>One app, up to ~20 screens</li>
+          <li>No calls needed — it’s all written</li>
+        </ul>
+        <a class="btn" href="#order">Start a Go-Live Check <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <p class="guar"><b>Nothing serious? You don’t pay.</b> And if you upgrade to Check + Fix within 14 days, the $490 is credited in full.</p>
+      </aside>
+    </div>
+  </div>
+
+  <section id="checklist" style="padding-top:0">
+    <div class="c grid">
+      <div class="head"><p class="eyebrow">The checklist</p><h2>What I check, room by room.</h2><p class="lead">These are the problems I see most often in apps built with AI tools. Each one is checked by hand, not just by a scanner.</p></div>
+      <div class="areas">
+        <div class="area">
+          <div class="lab"><span class="num">1</span><h3>Customer data</h3><p class="meta">“files out the window”</p><p class="why">Can one customer see another’s details — or can a stranger see everyone’s?</p></div>
+          <ul>
+            <li><div>Database access rules (Supabase <code>RLS</code>) on every table<small>The most common leak in Lovable and Bolt apps.</small></div></li>
+            <li><div>Firebase security rules, if your app uses Firebase</div></li>
+            <li><div>File storage: are uploaded photos and documents public?</div></li>
+            <li><div>What your app’s API returns to someone who isn’t logged in</div></li>
+          </ul>
+        </div>
+        <div class="area">
+          <div class="lab"><span class="num">2</span><h3>Logins &amp; admin pages</h3><p class="meta">“the back door is unlocked”</p><p class="why">Are the private parts of your app really private?</p></div>
+          <ul>
+            <li><div>Admin and staff pages checked on the server, not just hidden in the menu</div></li>
+            <li><div>Roles: can a normal user give themselves admin rights?</div></li>
+            <li><div>Sign-up, password reset and email links</div></li>
+          </ul>
+        </div>
+        <div class="area">
+          <div class="lab"><span class="num">3</span><h3>Secret keys</h3><p class="meta">“keys under the doormat”</p><p class="why">Keys that anyone visiting your site can copy.</p></div>
+          <ul>
+            <li><div>Supabase <code>service_role</code> key or other admin keys in the browser code</div></li>
+            <li><div>OpenAI, Stripe or email-service keys that can run up bills</div></li>
+            <li><div>Keys committed to GitHub history</div></li>
+          </ul>
+        </div>
+        <div class="area">
+          <div class="lab"><span class="num">4</span><h3>Payments</h3><p class="meta">“nobody checked the safe”</p><p class="why">Does “paid” really mean paid?</p></div>
+          <ul>
+            <li><div>Stripe webhooks verified, so payments can’t be faked</div></li>
+            <li><div>“Paid” status set by your server, never by the browser</div></li>
+            <li><div>Refunds, failed payments and cancelled subscriptions</div></li>
+          </ul>
+        </div>
+        <div class="area">
+          <div class="lab"><span class="num">5</span><h3>Backups</h3><p class="meta">“boxes in the basement”</p><p class="why">If something gets deleted, can you get it back — today?</p></div>
+          <ul>
+            <li><div>Backups switched on, and how far back they go</div></li>
+            <li><div>One real restore test on a copy of your data</div></li>
+          </ul>
+        </div>
+        <div class="area">
+          <div class="lab"><span class="num">6</span><h3>When something breaks</h3><p class="meta">“smoke alarm, no batteries”</p><p class="why">Do you find out before your customers tell you?</p></div>
+          <ul>
+            <li><div>Error alerts that reach you by email</div></li>
+            <li><div>A simple uptime check for your site</div></li>
+            <li><div>Basic security headers and HTTPS settings</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stage" id="sample">
+    <div class="c grid">
+      <div class="head" style="margin-bottom:48px"><p class="eyebrow">What you get</p><h2>A report you can actually read.</h2></div>
+      <div class="deliver">
+        <div><b>The report</b><p>Every finding: what’s wrong, why it matters to your business, how urgent it is.</p></div>
+        <div><b>The video</b><p>About 10 minutes, walking you through the findings on your own screens.</p></div>
+        <div><b>The fix list</b><p>Ranked and estimated, so you or any developer can start right away.</p></div>
+        <div><b>One follow-up</b><p>Questions by email for 14 days after the report.</p></div>
+      </div>
+      <p style="grid-column:1 / -1;margin-top:28px"><a class="tlink" href="/#sample">See a sample report</a></p>
+    </div>
+  </div>
+
+  <section>
+    <div class="c grid">
+      <div class="cols">
+        <div class="box">
+          <h3>What I need from you</h3>
+          <ul>
+            <li><b>Lovable / Bolt</b><span>Invite me to the project as a collaborator</span></li>
+            <li><b>GitHub</b><span>Read access to the code, if there is a repo</span></li>
+            <li><b>Supabase / Firebase</b><span>A read-only or developer role</span></li>
+            <li><b>Stripe</b><span>A view-only team seat, if you take payments</span></li>
+            <li><b>A test login</b><span>One normal user and, if you have one, one admin</span></li>
+          </ul>
+          <p class="note">Never your passwords. I only test apps you own, with your written go-ahead, and I don’t download your customers’ data. Remove my access the moment we’re done.</p>
+        </div>
+        <div class="box no">
+          <h3>What this isn’t</h3>
+          <ul>
+            <li>Not a certified penetration test or a compliance audit (SOC 2, HIPAA, GDPR)</li>
+            <li>Not new features or a redesign</li>
+            <li>Not a review of native iOS or Android code</li>
+            <li>Bubble and Base44 apps: I can inspect and report, but fixes are limited</li>
+          </ul>
+          <p class="note">Bigger than ~20 screens? Tell me what you have and I’ll quote a fixed price before you pay anything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="c grid">
+      <div class="head"><p class="eyebrow">How it works</p><h2>Three business days. <em>No calls.</em></h2></div>
+      <div class="steps">
+        <div class="step"><div class="dot">1</div><span class="k">Day 0</span><h3>Order and invite</h3><p>Pay the fixed price, fill in a short form about your app, and invite me as a collaborator.</p></div>
+        <div class="step"><div class="dot">2</div><span class="k">Days 1–3</span><h3>I inspect it</h3><p>If I find something urgent — like customer data open to anyone — I tell you within 24 hours.</p></div>
+        <div class="step"><div class="dot">3</div><span class="k">Day 3</span><h3>Report and video</h3><p>Fix it yourself, hand it to your developer, or upgrade to Check + Fix and I’ll do it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" style="padding-top:0">
+    <div class="c grid">
+      <div class="orderbox">
+        <div>
+          <p class="eyebrow">How to order</p>
+          <h2>Send me your app. That’s it.</h2>
+          <p class="lead">Email me the link to your app and the tool you built it with. Within one business day I reply with a fixed quote, a secure payment link, and what to invite me to.</p>
+        </div>
+        <div class="orderact">
+          <a class="btn" href="mailto:umutcakirbm@gmail.com?subject=Go-Live%20Check&amp;body=App%20link%3A%20%0ABuilt%20with%20(Lovable%2C%20Bolt%2C%20Replit%2C%20Claude%20Code%E2%80%A6)%3A%20%0AAbout%20how%20many%20screens%3A%20%0ADo%20you%20take%20payments%3F%20">Email me your app</a>
+          <p class="fine">Reply within 1 business day · Pay only after you see the quote</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="c grid">
+      <div class="faq">
+        <p class="eyebrow">Questions</p>
+        <h2 style="margin-bottom:40px">Before you order.</h2>
+        <details open><summary>Is my Lovable app secure by default?<i></i></summary><p>Not always. Lovable and similar tools build working apps fast, but the database access rules (Supabase “RLS”) are often missing or too open. That means one customer — or a stranger — may be able to read other people’s data. It’s quick to check and usually quick to fix.</p></details>
+        <details><summary>How much of my time does this take?<i></i></summary><p>About 15 minutes: a short form and a few invitations. Everything after that is written, and you get a video instead of a meeting.</p></details>
+        <details><summary>What if you find something serious halfway through?<i></i></summary><p>You hear about it within 24 hours, with a short note on how to close it quickly — you don’t have to wait for the full report.</p></details>
+        <details><summary>Will you keep my app and data confidential?<i></i></summary><p>Yes. I’m happy to sign a standard mutual NDA, and confidentiality is part of my terms anyway. I work on your project only through the access you give me, I don’t copy customer data, and I delete my notes on request after the job.</p></details>
+        <details><summary>Can’t I just ask ChatGPT or Claude to check my app?<i></i></summary><p>You can, and it’s worth trying. But the AI that wrote the problem is usually the one checking it — and it often answers “this looks secure” when it isn’t. I test your app from the outside, the way an attacker would, and I put my name under the result.</p></details>
+        <details><summary>Can you fix the problems too?<i></i></summary><p>Yes. Check + Fix ($1,490) includes fixing every critical and serious issue, re-testing, and setting up backups and error alerts. If you start with the $490 check, it’s credited in full when you upgrade within 14 days.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="end" style="background:var(--yellow);border-top:1.5px solid var(--ink)">
+    <div class="c">
+      <h2>Find the holes<br>before your customers do.</h2>
+      <p class="lead">$490 fixed. Report in three business days.</p>
+      <a class="btn" href="#start">Start a Go-Live Check <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </div>
+</main>
+</Base>
+<style>
+
+  .crumbs{font-size:15px;color:var(--ink-3);padding-top:28px}
+  .crumbs a{color:var(--ink-3);text-decoration:none}
+  .crumbs a:hover{color:var(--ink)}
+  .crumbs span{margin:0 8px}
+
+  .s-hero{padding:40px 0 96px}
+  .s-hero .copy{grid-column:1 / span 7}
+  .s-hero h1{font-size:clamp(42px,5.4vw,76px)}
+  .s-hero .lead{margin-top:26px;max-width:38ch}
+  .s-hero .who{margin-top:36px;display:grid;gap:12px;max-width:52ch;padding:0;list-style:none}
+  .s-hero .who li{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:18px;color:var(--ink-2)}
+  .s-hero .who li::before{content:"→";color:var(--red);font-weight:700}
+
+  .buy{grid-column:9 / span 4;align-self:start;position:sticky;top:96px;background:#fff;border-radius:20px;padding:30px;box-shadow:0 1px 2px rgba(27,25,21,.06),0 24px 60px -28px rgba(27,25,21,.3)}
+  .buy .price{color:var(--ink);font-size:64px;margin:6px 0 4px}
+  .buy .when{color:var(--ink-3)}
+  .buy ul{list-style:none;padding:0;margin:22px 0 24px}
+  .buy li{padding:10px 0 10px 28px;border-top:1px solid var(--line);font-size:16px;position:relative}
+  .buy li::before{content:"";position:absolute;left:2px;top:15px;width:14px;height:14px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.2 2.2 4.8-4.8' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+  .buy .btn{width:100%;justify-content:center}
+  .buy .guar{margin-top:16px;font-size:15px;color:var(--ink-2);background:#FFFBEA;border-radius:12px;padding:12px 14px}
+  .buy .guar b{font-weight:600}
+
+  /* detailed checklist */
+  .areas{grid-column:1 / -1;border-top:1.5px solid var(--ink)}
+  .area{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);padding:40px 0;border-bottom:1px solid var(--line)}
+  .area .lab{grid-column:1 / span 4}
+  .area .lab .num{margin-bottom:16px}
+  .area .lab p.meta{font-style:italic;font-size:15px;color:var(--red);margin-top:8px}
+  .area .lab p.why{font-size:16px;color:var(--ink-3);margin-top:12px;max-width:30ch}
+  .area ul{grid-column:6 / span 7;list-style:none;margin:0;padding:0}
+  .area li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:12px 0;border-top:1px dashed var(--line);font-size:18px}
+  .area li:first-child{border-top:0;padding-top:4px}
+  .area li::before{content:"";width:18px;height:18px;border:1.6px solid var(--ink);border-radius:4px;margin-top:5px}
+  .area li small{display:block;font-size:15px;color:var(--ink-3)}
+  code{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.86em;background:var(--mist);padding:1px 6px;border-radius:5px}
+
+  /* two-col info blocks */
+  .cols{grid-column:1 / -1;display:grid;grid-template-columns:repeat(2,1fr);column-gap:var(--gut);row-gap:56px}
+  .box{background:#fff;border-radius:20px;padding:36px 36px 38px;border:1px solid var(--line)}
+  .box h3{margin-bottom:18px}
+  .box ul{list-style:none;padding:0;margin:0}
+  .box li{padding:11px 0;border-top:1px solid var(--line);font-size:17px;display:grid;grid-template-columns:150px 1fr;gap:16px}
+  .box li b{font-weight:600}
+  .box.no li{grid-template-columns:24px 1fr;gap:10px}
+  .box.no li::before{content:"×";color:var(--ink-3);font-weight:700}
+  .box .note{margin-top:18px;font-size:15px;color:var(--ink-3)}
+
+  .deliver{grid-column:1 / -1;display:grid;grid-template-columns:repeat(4,1fr);column-gap:var(--gut);border-top:1.5px solid var(--ink)}
+  .deliver div{padding:28px 0}
+  .deliver b{display:block;font-size:22px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
+  .deliver p{color:var(--ink-2);font-size:17px}
+
+  @media (max-width:980px){
+    .s-hero .copy,.buy{grid-column:1 / -1}
+    .buy{position:static;margin-top:44px}
+    .area{grid-template-columns:1fr;row-gap:20px}
+    .area .lab,.area ul{grid-column:1 / -1}
+    .cols{grid-template-columns:1fr}
+    .box{padding:26px 22px}
+    .box li{grid-template-columns:1fr;gap:2px}
+    .deliver{grid-template-columns:1fr 1fr;row-gap:8px}
+  }
+
+  .orderbox{grid-column:1 / -1;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gut);align-items:end;background:#fff;border:1px solid var(--line);border-radius:24px;padding:48px}
+  .orderbox > div:first-child{grid-column:1 / span 7}
+  .orderbox .lead{margin-top:18px}
+  .orderact{grid-column:9 / span 4}
+  .orderact .btn{width:100%;justify-content:center}
+  .orderact .fine{font-size:15px;color:var(--ink-3);margin-top:12px}
+  @media (max-width:980px){.orderbox{grid-template-columns:1fr;row-gap:28px;padding:28px 22px}.orderbox > div:first-child,.orderact{grid-column:1 / -1}}
+</style>

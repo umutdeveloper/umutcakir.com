@@ -1,0 +1,77 @@
+---
+import '@fontsource-variable/schibsted-grotesk/wght.css';
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  jsonLd?: Record<string, unknown>;
+}
+
+const { title, description, image = '/assets/og-image.png', jsonLd } = Astro.props;
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/');
+const canonical = new URL(path, Astro.site).href;
+const imageURL = new URL(image, Astro.site).href;
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Umut Çakır',
+  url: 'https://umutcakir.com',
+  jobTitle: 'Software engineer',
+  sameAs: ['https://www.linkedin.com/in/umuttcakir', 'https://github.com/umutdeveloper'],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {path === '/404' ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <!-- shared hand-drawn wobble for line art -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <filter id="hand"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="3" /><feDisplacementMap in="SourceGraphic" scale="2.4" /></filter>
+    </svg>
+
+    <header>
+      <div class="c bar">
+        <a class="logo" href="/">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#1B1915" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 12L13 4l10 8v10H3z" fill="#FFD84A" /><circle cx="13" cy="15" r="3.2" fill="#fff" /><path d="M15.4 17.4l3 3" stroke-linecap="round" /></svg>
+          Umut Çakır<i>Go-Live Checks</i>
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a href="/go-live-check">Go-Live Check</a>
+          <a href="/#sample">Sample report</a>
+          <a href="/#pricing">Pricing</a>
+          <a class="btn" href="/go-live-check#order">Start a check</a>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer>
+      <div class="c">
+        <span>© {new Date().getFullYear()} Umut Çakır</span>
+        <span><a href="/" style="color:inherit">Home</a> · <a href="/go-live-check" style="color:inherit">Go-Live Check</a> · No trackers</span>
+      </div>
+    </footer>
+  </body>
+</html>
