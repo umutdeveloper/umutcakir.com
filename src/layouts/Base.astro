@@ -23,6 +23,13 @@ const person = {
   image: 'https://umutcakir.com/assets/umut.jpg',
   sameAs: ['https://www.linkedin.com/in/umuttcakir', 'https://github.com/umutdeveloper'],
 };
+const website = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Umut Çakır',
+  alternateName: 'umutcakir.com',
+  url: 'https://umutcakir.com/',
+};
 ---
 
 <!doctype html>
@@ -44,6 +51,7 @@ const person = {
     <meta property="og:image" content={imageURL} />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
+    {path === '/' && <script type="application/ld+json" set:html={JSON.stringify(website)} />}
     <script type="application/ld+json" set:html={JSON.stringify(person)} />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
