@@ -112,25 +112,27 @@ import Base from '../layouts/Base.astro';
         <p class="eyebrow">The report</p>
         <h2>What you get, in plain English.</h2>
         <p class="lead">Every finding says what’s wrong, why it matters to your business, and how urgent it is. Plus a 10-minute video walking you through it.</p>
+        <p class="lead">These are real findings from a test app I had Lovable build. No real customer data.</p>
       </div>
       <article class="report reveal" aria-label="Sample report">
         <div class="rhead">
-          <div><small>Sample report · Booking app for a cleaning company</small><h3>Go-Live Report</h3></div>
+          <div><small>Real findings · A cleaning company’s booking app we built with Lovable to test</small><h3>Go-Live Report</h3></div>
           <span class="seal">Inspected by Umut</span>
         </div>
-        <div class="tally">
-          <div><b class="t-r">3</b><span>Fix now</span></div>
-          <div><b class="t-a">5</b><span>Fix soon</span></div>
-          <div><b class="t-g">12</b><span>Looks good</span></div>
+        <div class="tally" style="grid-template-columns:repeat(4,1fr)">
+          <div><b class="t-r">0</b><span>Fix now</span></div>
+          <div><b class="t-a">1</b><span>Fix soon</span></div>
+          <div><b class="t-a">2</b><span>Minor</span></div>
+          <div><b class="t-g">8</b><span>Looks good</span></div>
         </div>
         <ul class="items">
-          <li><span class="pill p-r">Fix now</span><div><strong>Anyone with the link can read every customer’s name and address.</strong><p>Data access rules are switched off on the customers table.</p></div></li>
-          <li><span class="pill p-r">Fix now</span><div><strong>The admin page opens without logging in.</strong><p>One missing check on the /admin route.</p></div></li>
-          <li><span class="pill p-r">Fix now</span><div><strong>A customer could mark their own booking as paid.</strong><p>Payment confirmations aren’t verified.</p></div></li>
-          <li><span class="pill p-a">Fix soon</span><div><strong>Backups exist, but nobody has ever tried restoring one.</strong></div></li>
-          <li><span class="pill p-g">Looks good</span><div><strong>Passwords are handled properly by your login provider.</strong></div></li>
+          <li><span class="pill p-a">Fix soon</span><div><strong>A customer could pose as one of your cleaners and see their door codes.</strong><p>When you add a cleaner by email, the app trusts an email field that customers can change themselves. This only appeared after the cleaner feature was added.</p></div></li>
+          <li><span class="pill p-a">Minor</span><div><strong>One account could flood your calendar with fake bookings.</strong><p>There’s no limit on how many bookings a customer can make.</p></div></li>
+          <li><span class="pill p-g">Looks good</span><div><strong>Customers only ever see their own bookings and photos.</strong></div></li>
+          <li><span class="pill p-g">Looks good</span><div><strong>Home photos are in private storage, not at public links.</strong></div></li>
+          <li><span class="pill p-g">Looks good</span><div><strong>Nobody can make themselves the owner.</strong></div></li>
         </ul>
-        <div class="rfoot"><span><b>Inspector’s note:</b> start with the three red items — about two days of work.</span><a class="tlink" href="/go-live-check#sample">What’s in a full report</a></div>
+        <div class="rfoot"><span><b>Inspector’s note:</b> the first version was solid. The hole appeared when a new feature was added. That’s why one check isn’t enough.</span><a class="tlink" href="/go-live-check#sample">What’s in a full report</a></div>
       </article>
     </div>
   </div>
@@ -157,7 +159,7 @@ import Base from '../layouts/Base.astro';
           <ul><li>Everything in the Go-Live Check</li><li>I fix every critical and serious issue</li><li>Re-tested, with before/after proof</li><li>Backups and error alerts set up</li></ul>
           <a class="btn y" href="/go-live-check#start">Check and fix my app</a></div>
         <div class="plan"><span class="tag"></span><h3>Care Plan</h3><div class="price">$290<small> / month</small></div><div class="when">Cancel anytime</div>
-          <ul><li>Monthly security check</li><li>Updates and backup tests</li><li>Up to 2 hours of small changes</li><li>Reply within 48 hours</li></ul>
+          <ul><li>Re-check after big new features</li><li>Monthly security check</li><li>Updates and backup tests</li><li>Up to 2 hours of small changes</li><li>Reply within 48 hours</li></ul>
           <a class="btn ghost" href="/go-live-check#start">Keep my app healthy</a></div>
       </div>
       <div class="promise">
@@ -191,7 +193,8 @@ import Base from '../layouts/Base.astro';
         <details open><summary>Do I need to give you my passwords?<i></i></summary><p>No. You invite me as a collaborator (for example in Lovable, GitHub or Supabase), and remove me the moment we’re done.</p></details>
         <details><summary>I’m not technical. Will I understand the report?<i></i></summary><p>That’s the point of it. Every issue says what’s wrong, why it matters to your business, and how urgent it is — in plain words.</p></details>
         <details><summary>Which tools do you work with?<i></i></summary><p>Apps built with Lovable, Bolt, Replit, Claude Code or Cursor, running on Supabase or Firebase. For Bubble and Base44 I can inspect and report; fixes are limited.</p></details>
-        <details><summary>Is my Lovable (or Bolt, Replit) app secure by default?<i></i></summary><p>Not always. The most common problem is that the database’s access rules (Supabase “RLS”) are missing or too open, so one customer — or a stranger — can read other people’s data. It’s quick to check and usually quick to fix.</p></details>
+        <details><summary>Is my Lovable (or Bolt, Replit) app secure by default?<i></i></summary><p>Sometimes the first version is fine. The most common problem is that the database’s access rules (Supabase “RLS”) are missing or too open, so one customer — or a stranger — can read other people’s data. And every new feature can quietly undo old rules: in my own test app, the first version was solid, and adding cleaners opened a hole.</p></details>
+        <details><summary>My app passed a check. Why would I need the Care Plan?<i></i></summary><p>Because your app keeps changing. Each new feature mixes with the old rules in new ways, and that’s where holes appear. The Care Plan re-checks your app every month and after big new features, so a safe app stays safe.</p></details>
         <details><summary>What if you don’t find anything?<i></i></summary><p>Then you know your app is in good shape — and you don’t pay.</p></details>
       </div>
     </div>
